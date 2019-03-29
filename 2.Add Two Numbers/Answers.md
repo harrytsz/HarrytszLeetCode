@@ -63,5 +63,52 @@ class Solution(object):
 Java 版本
 
 ```java
-
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        if (l1 == null) return l2;
+        else if (l2 == null) return l1;
+        
+        ListNode tmp1 = l1;
+        ListNode tmp2 = l2;
+        int carry = 0;
+        ListNode newhead = new  ListNode(0);
+        ListNode tmp = newhead;
+        
+        while (tmp1 != null && tmp2 != null)
+        {
+            int val = (tmp1.val + tmp2.val + carry);
+            carry = val / 10;
+            tmp.next = new ListNode(val % 10);
+            tmp = tmp.next;
+            tmp1 = tmp1.next;
+            tmp2 = tmp2.next;
+        }
+        
+        ListNode tmp12 = tmp1 != null ? tmp1 : tmp2;
+        
+        while (tmp12 != null)
+        {
+            int val = (tmp12.val + carry);
+            carry = val / 10;
+            tmp.next = new ListNode(val % 10);
+            tmp = tmp.next;
+            tmp12 = tmp12.next;
+        }
+        
+        if (carry != 0)
+        {
+            tmp.next = new ListNode(1);
+        }
+        
+        return newhead.next;
+    }
+}
 ```
