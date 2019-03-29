@@ -59,3 +59,9 @@ class Solution(object):
             
         return newhead.next
 ```
+
+Java 版本
+
+```java
+
+```
