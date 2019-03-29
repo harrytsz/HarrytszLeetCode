@@ -1,3 +1,5 @@
+Python版本：
+
 ```python
 class Solution(object):
     def twoSum(self, nums, target):
@@ -15,6 +17,8 @@ class Solution(object):
         return 
         
 ```
+
+Java版本：
 
 ```java
 class Solution {
