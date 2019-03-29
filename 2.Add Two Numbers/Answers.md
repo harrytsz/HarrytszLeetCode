@@ -26,34 +26,34 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        if l1 is None:
+        if not l1:
             return l2
-        if l2 is None:
+        if not l2:
             return l1
         
         tmp1 = l1
         tmp2 = l2
         newhead = ListNode(0)
-        carry = 0
         tmp = newhead
+        carry = 0
         
         while tmp1 and tmp2:
-            value = (tmp1.val + tmp2.val + carry)
-            tmp.next = ListNode(value % 10)
+            val = tmp1.val + tmp2.val + carry
+            carry = val / 10
+            tmp.next = ListNode(val % 10)
             tmp = tmp.next
-            carry = value / 10
             tmp1 = tmp1.next
             tmp2 = tmp2.next
-        
-        tmp12 = tmp1 if tmp1 else tmp2
             
+        tmp12 = tmp1 if tmp1 else tmp2
+        
         while tmp12:
-            value12 = tmp12.val + carry
-            tmp.next = ListNode(value12 % 10)
+            val = tmp12.val + carry
+            carry = val / 10
+            tmp.next = ListNode(val % 10)
             tmp = tmp.next
             tmp12 = tmp12.next
-            carry = value12 / 10
-            
+        
         if carry != 0:
             tmp.next = ListNode(1)
             
