@@ -42,3 +42,19 @@ class Solution(object):
                 return None
         return position == [0, 0]
 ```
+
+```python
+class Solution(object):
+    def judgeCircle(self, moves):
+        """
+        :type moves: str
+        :rtype: bool
+        """
+        from collections import Counter
+        
+        counter = Counter(moves)
+        if counter['L'] != counter['R'] or counter['U'] != counter['D']:
+            return False
+        else:
+            return True
+```
