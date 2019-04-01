@@ -23,7 +23,7 @@ Python 版本：
 class Solution(object):
     def isDividingNumbers(self, num):
         tmp = str(num)
-        if '0' in tmp:
+        if '0' in tmp:    # 自除数不允许包含 0 
             return False
         for i in tmp:
             if num % int(i) != 0:
