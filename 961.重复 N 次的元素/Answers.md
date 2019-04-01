@@ -42,3 +42,18 @@ class Solution(object):
             if counter[key] == N:
                 return key
 ```
+
+```python
+class Solution(object):
+    def repeatedNTimes(self, A):
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        A.sort()
+        N = len(A) // 2
+        for i in range(N-1, len(A)):
+            if A.count(A[i]) == N:
+                return A[i]
+
+```
