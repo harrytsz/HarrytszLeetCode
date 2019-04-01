@@ -33,3 +33,15 @@ class Solution(object):
             counter += S.count(item)
         return counter
 ```
+
+```python
+class Solution:
+    def numJewelsInStones(self, J: str, S: str) -> int:
+        if J == '' or S == '':
+            return 0
+        counter = 0
+        for item in S:
+            if item in J:
+                counter += 1
+        return counter
+```
