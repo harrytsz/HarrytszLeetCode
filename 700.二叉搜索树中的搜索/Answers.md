@@ -20,7 +20,7 @@
     1   3
 在上述示例中，如果要找的值是 5，但因为没有节点值为 5，我们应该返回 NULL。
 
-Pyhon 版本：
+Pyhon 版本 递归：
 
 ```python
 # Definition for a binary tree node.
