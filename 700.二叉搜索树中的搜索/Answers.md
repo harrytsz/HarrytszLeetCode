@@ -47,3 +47,25 @@ class Solution(object):
         r = self.searchBST(root.right, val)
         return l or r
 ```
+
+```python
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def searchBST(self, root, val):
+        """
+        :type root: TreeNode
+        :type val: int
+        :rtype: TreeNode
+        """
+    
+        while True:
+            if root == None or root.val == val:
+                return root
+            root = root.left if val < root.val else root.right
+```
