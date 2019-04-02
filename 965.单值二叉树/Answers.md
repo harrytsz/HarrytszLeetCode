@@ -55,3 +55,32 @@ class Solution(object):
                 queue.append(cur.right)
         return True
 ```
+
+
+Python 递归版本
+
+```python
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    
+            
+    def isUnivalTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        l = True
+        r = True
+        if root.left:
+            l = root.val == root.left.val and self.isUnivalTree(root.left)
+        if root.right:
+            r = root.val == root.right.val and self.isUnivalTree(root.right)
+        return l and r
+            
+```
