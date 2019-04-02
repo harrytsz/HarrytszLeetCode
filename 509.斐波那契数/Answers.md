@@ -47,3 +47,18 @@ class Solution(object):
             a, b = b, a+b
         return a
 ```
+
+Python 递归 版本：
+
+```python
+class Solution(object):
+    def fib(self, N):
+        """
+        :type N: int
+        :rtype: int
+        """
+        if N < 2:
+            return N
+        else:
+            return self.fib(N-1) + self.fib(N-2)
+```
