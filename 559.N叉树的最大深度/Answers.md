@@ -43,3 +43,26 @@ class Solution(object):
             depth = max(depth, 1+self.maxDepth(node))
         return depth
 ```
+
+```python
+"""
+# Definition for a Node.
+class Node(object):
+    def __init__(self, val, children):
+        self.val = val
+        self.children = children
+"""
+class Solution(object):
+    def maxDepth(self, root):
+        """
+        :type root: Node
+        :rtype: int
+        """
+        if root is None:
+            return 0
+        tmp = []
+        for node in root.children:
+            length = self.maxDepth(node)
+            tmp.append(length)
+        return max(tmp) + 1 if tmp else 1
+```
