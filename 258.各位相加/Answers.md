@@ -23,3 +23,20 @@ class Solution(object):
             num = sum([int(i) for i in list(str(num))])
         return num
 ```
+
+f(10*x + y) = f(9*x + x + y) = f(x + y), 所以 x % 9 = 0
+
+```python
+class Solution(object):
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        if num > 9:
+            num = num % 9
+            if num == 0:
+                return 9
+        return num
+        
+```
