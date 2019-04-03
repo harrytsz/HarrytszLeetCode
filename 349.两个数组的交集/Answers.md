@@ -29,3 +29,30 @@ class Solution(object):
         set2 = set(nums2)
         return set1 & set2
 ```
+
+Python 版本 02：
+
+```python
+class Solution(object):
+    def intersection(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        res = []
+        len1 = len(nums1)
+        len2 = len(nums2)
+        if len1 > len2:
+            length = len2
+            longNum = nums1
+            shortNum = nums2
+        else:
+            length = len1
+            longNum = nums2
+            shortNum = nums1
+        for item in shortNum:
+            if item in longNum and item not in res:
+                res.append(item)
+        return res
+```
