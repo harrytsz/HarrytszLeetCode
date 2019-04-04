@@ -25,7 +25,6 @@ class Solution(object):
         :type b: str
         :rtype: int
         """
-        # 选择 a 中一段 使用 find() 去 b 中寻找，若没找到说明 a 特有
         if a == b:
             return -1
         aLen = len(a)
