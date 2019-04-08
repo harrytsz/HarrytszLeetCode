@@ -46,3 +46,25 @@ class Solution(object):
         return res
             
 ```
+
+Python version 01 recursion:
+
+```python
+class Solution(object):
+    def preorder(self, root):
+        """
+        :type root: Node
+        :rtype: List[int]
+        """
+        res = []
+        
+        def recursion(root):
+            if root is None:
+                return res
+            res.append(root.val)
+            for c in root.children:
+                recursion(c)
+            return res
+        recursion(root)
+        return res
+```
