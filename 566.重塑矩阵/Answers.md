@@ -56,3 +56,31 @@ class Solution(object):
         import numpy as np
         return np.reshape(nums, (r, c))
 ```
+
+```python
+class Solution(object):
+    def matrixReshape(self, nums, r, c):
+        """
+        :type nums: List[List[int]]
+        :type r: int
+        :type c: int
+        :rtype: List[List[int]]
+        """
+        arr = []
+        for item in nums:
+            arr += item
+        # print(arr)
+        totalLen = len(arr)
+        if totalLen < r*c:
+            return nums
+        
+        res = []
+        i = 0
+        for row in range(r):
+            tmp = []
+            for col in range(c):
+                tmp.append(arr[i])
+                i += 1
+            res.append(tmp)
+        return res
+```
