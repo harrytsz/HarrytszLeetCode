@@ -42,13 +42,15 @@ class Solution(object):
             t = qsize
             levelsum = 0
             while t > 0:
-                cur = queue.pop()
+                cur = queue.pop(0)
                 levelsum += cur.val
+                if cur.left is not None:
+                    queue.append(cur.left)
+                if cur.right is not None:
+                    queue.append(cur.right)
                 t -= 1
-            if cur.left:
-                queue.append(cur.left)
-            if cur.right:
-                queue.append(cur.right)
+                # print(levelsum)
+                
             res.append(float(levelsum)/qsize)
         return res
 ```
