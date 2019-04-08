@@ -61,3 +61,31 @@ class Solution(object):
             res += self.postorder(node)
         return res
 ```
+
+Python version 02:
+
+```python
+"""
+# Definition for a Node.
+class Node(object):
+    def __init__(self, val, children):
+        self.val = val
+        self.children = children
+"""
+class Solution(object):
+    def postorder(self, root):
+        """
+        :type root: Node
+        :rtype: List[int]
+        """
+        if root is None:
+            return []
+        res = []
+        stack = [root]
+        while stack:
+            cur = stack.pop()
+            if cur.children:
+                stack = stack + cur.children
+            res.append(cur.val)
+        return res[::-1]
+```
