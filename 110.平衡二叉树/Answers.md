@@ -99,3 +99,33 @@ class Solution {
     }
 }
 ```
+
+Python version 02:
+
+```python 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def isBalanced(self, root: TreeNode) -> bool:
+        flag = [True]
+        getHeight(root, 1, flag)
+        return flag[0]
+    
+def getHeight(head, level, flag):
+    if not head:
+        return level
+    lH = getHeight(head.left, level+1, flag)
+    if not flag[0]:
+        return level
+    rH = getHeight(head.right, level+1, flag)
+    if not flag[0]:
+        return level
+    if abs(lH-rH)>1:
+        flag[0] = False
+    return max(lH, rH)
+```
