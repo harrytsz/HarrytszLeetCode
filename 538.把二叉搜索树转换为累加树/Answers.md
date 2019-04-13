@@ -54,3 +54,30 @@ def inorder(root, values):
     values.append(root.val)
     inorder(root.right, values)
 ```
+
+Python version 01:
+
+```python
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def convertBST(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
+        tmp = 0
+        travel(root, tmp)
+        return root
+    
+def travel(root, tmp):
+    if root is None:
+        return tmp
+    root.val += travel(root.right, tmp)
+    return travel(root.left, root.val)
+```
