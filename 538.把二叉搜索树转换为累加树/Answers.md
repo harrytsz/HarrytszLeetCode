@@ -81,3 +81,31 @@ def travel(root, tmp):
     root.val += travel(root.right, tmp)
     return travel(root.left, root.val)
 ```
+
+Python version 02:
+
+```python
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def __init__(self, total=0):
+        self.total = total
+        
+    def convertBST(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
+        if root is None:
+            return 
+        self.convertBST(root.right)
+        self.total += root.val
+        root.val = self.total
+        self.convertBST(root.left)
+        return root
+```
