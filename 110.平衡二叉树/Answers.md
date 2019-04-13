@@ -59,3 +59,43 @@ def countFloor(root):
     else:
         return 1+max(countFloor(root.left), countFloor(root.right))
 ```
+
+Java Version 01:
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        boolean[] res = new boolean[1];
+        res[0] = true;
+        getHeight(root, 1, res);
+        return res[0];
+    }
+    
+    public int getHeight(TreeNode head, int level, boolean[] res){
+        if (head == null){
+            return level;
+        }
+        int lH = getHeight(head.left, level+1, res);
+        if (!res[0]){
+            return level;
+        }
+        int rH = getHeight(head.right, level+1, res);
+        if (!res[0]){
+            return level;
+        }
+        if ((Math.abs(lH-rH))>1){
+            res[0] = false;
+        }
+        return Math.max(lH, rH);
+    }
+}
+```
