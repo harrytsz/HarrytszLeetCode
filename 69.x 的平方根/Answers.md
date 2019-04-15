@@ -18,7 +18,7 @@
      由于返回类型是整数，小数部分将被舍去。
 
 Python version 00:
-牛顿法：
+牛顿迭代法：
 
 ```python
 class Solution(object):
