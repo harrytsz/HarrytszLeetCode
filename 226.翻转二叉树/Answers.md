@@ -70,3 +70,71 @@ class Solution(object):
         self.invertTree(root.right)
         return root
 ```
+
+Java version 00 :
+
+先序、中序、后序均可实现同样的功能
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root != null){
+            invertTree(root.left);
+            invertTree(root.right);
+            TreeNode t = root.left;
+            root.left = root.right;
+            root.right =t;
+            return root;
+        }else{
+            return null;
+        }
+    }
+}
+```
+
+Java version 01:
+层序遍历实现：
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null){
+            return null;
+        }else{
+            Queue<TreeNode> queue = new LinkedList<TreeNode>();
+            queue.offer(root);
+            while (!queue.isEmpty()){
+                TreeNode  p = queue.poll();
+                TreeNode t = p.left;
+                p.left = p.right;
+                p.right = t;
+                if (p.left != null){
+                    queue.offer(p.left);
+                }
+                if (p.right != null){
+                    queue.offer(p.right);
+                }
+            }
+            return root;
+        }
+    }
+}
+```
