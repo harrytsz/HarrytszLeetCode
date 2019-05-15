@@ -32,3 +32,19 @@ class Solution(object):
         """
         return bin(x ^ y).count('1')
 ```
+
+Python version 01
+
+```python
+class Solution(object):
+    def hammingDistance(self, x, y):
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
+        res = 0
+        for i in range(32):
+            res += (x ^ y) >> i & 1
+        return res
+```
