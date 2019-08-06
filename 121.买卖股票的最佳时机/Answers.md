@@ -431,22 +431,22 @@ int maxProfit_k_any(int max_k, int[] prices) {
 
 所以，大家不要被各种高大上的名词吓到，再多的困难问题，奇技淫巧，也不过是基本套路的不断升级组合产生的。只要把住算法的底层原理，即可举一反三，逐个击破。
 
-1. 买卖股票的最佳时机
+1. [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/)
 
-2. 买卖股票的最佳时机 II
+2. [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
-3. 买卖股票的最佳时机 III
+3. [买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
 
-4. 买卖股票的最佳时机 IV
+4. [买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)
 
-5. 最佳买卖股票时机含冷冻期
+5. [最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
 
-6. 买卖股票的最佳时机含手续费
+6. [买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 
 ## 推荐阅读：
 
-学习数据结构的框架思维
+[学习数据结构的框架思维](https://mp.weixin.qq.com/s?__biz=MzU0MDg5OTYyOQ==&mid=2247483857&idx=1&sn=918638e5a70e22b5b7bda9bbc5484f20&chksm=fb336193cc44e885f0524bdfe58a4e92b22a2b46017bf232b2ef91a576de648a8e61a30fd83d&token=656593294&lang=zh_CN#rd)
 
-动态规划详解
+[动态规划详解](https://mp.weixin.qq.com/s?__biz=MzU0MDg5OTYyOQ==&mid=2247483818&idx=1&sn=6035f861d1b2bfd0178e842f26ac4836&chksm=fb3361e8cc44e8fe331154bfd32bd7b3b4f159bfad5d38d4a6b0b9f0d7e3485b93b828ee72cc&token=656593294&lang=zh_CN#rd)
 
 如果本文对大家有帮助，欢迎关注我的公众号 labuladong，致力于把算法问题讲清楚～
